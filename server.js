@@ -13,7 +13,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/data", (req, res) => {
-  console.log(`temp: ${req.body.temp}, hum: ${req.body.hum}`);
   io.sockets.emit("sensor data", JSON.stringify(req.body));
   res.send("success");
 });

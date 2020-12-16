@@ -9,7 +9,7 @@ const Main = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
-    const socket = io("http://localhost:4000");
+    const socket = io();
     socket.on("connect", () => {
       console.log("websocket connected!");
       socket.on("sensor data", (d) => {
